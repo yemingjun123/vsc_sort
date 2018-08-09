@@ -1,7 +1,10 @@
 
 import test
 import copy
+import mergeSort
+import quickSort
 
+@test.timer
 def selectionSort(arr):
     for i in range(0, len(arr)):
         minIndex = i
@@ -10,6 +13,7 @@ def selectionSort(arr):
                 minIndex = j
         arr[i], arr[minIndex] = arr[minIndex], arr[i]
  
+@test.timer
 def insertionSort(arr):
     for i in range(1, len(arr)):
         tmp = arr[i]
@@ -21,12 +25,16 @@ def insertionSort(arr):
         arr[j] = tmp
         
 
-
-
 if __name__ == "__main__":
-    # arr = test.random_arr(10000, 0, 3)
-    # arr2 = copy.copy(arr)
-    arr = test.nearlyOrder_arr(10000, 2)
-    # print arr
-    # test.testSort("selectionSort", selectionSort, arr)
-    test.testSort("insertionSort", insertionSort, arr)
+
+    arr = test.random_arr(10000, 0, 400)
+    arr1 = copy.copy(arr)
+    arr2 = copy.copy(arr)
+    arr3 = copy.copy(arr)
+
+    # arr = test.nearlyOrder_arr(10, 2)
+
+    selectionSort(arr)
+    insertionSort(arr1)
+    mergeSort.mergeSort(arr2)
+    quickSort.quickSort(arr3)

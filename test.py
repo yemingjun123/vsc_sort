@@ -21,15 +21,20 @@ def nearlyOrder_arr(len, swap):
         arr[posx], arr[posy] = arr[posy], arr[posx] 
     return arr
 
-def testSort(sortName, sort, arr):
-    t0 = time.time()
-    sort(arr)
-    t1 = time.time()
-    assert(isSorted(arr))
-    print("%s : %f" % (sortName, t1-t0))
-
 def isSorted(arr):
     for i in range(len(arr) - 1):
         if arr[i] > arr[i+1]:
             return False
     return True
+
+def timer(func):
+    def wrapper(arr):
+        t0 = time.time()
+        func(arr)
+        t1 = time.time()
+        status = isSorted(arr)
+        print ("Total time running %s: %s seconds, status: %s" %
+               (func.func_name, str(t1-t0), status))
+    return wrapper
+
+
