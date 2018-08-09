@@ -21,9 +21,20 @@ class MaxHeap:
             self.data[k/2], self.data[k] = self.data[k], self.data[k/2]
             k /= 2
 
+    def description(self):
+        deep = self.deep()
+        
 
+    def deep(self):
+        k = self.count
+        if k == 0:
+            return 0
 
-
+        d = 0
+        while k > 1:
+            k /= 2
+            d += 1
+        return d+1
 
 
     

@@ -46,7 +46,9 @@ if __name__ == "__main__":
     heap.insert(2)
     heap.insert(4)
     heap.insert(6)
+    heap.insert(8)
+    heap.insert(10)
     print heap.size()
     print heap.isEmpty()
-
+    print heap.deep()
     print heap.data
