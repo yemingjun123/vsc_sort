@@ -4,6 +4,7 @@ import copy
 import sys
 import mergeSort
 import quickSort
+from maxHeap import MaxHeap
 
 @test.timer
 def selectionSort(arr):
@@ -28,15 +29,24 @@ def insertionSort(arr):
 
 if __name__ == "__main__":
 
-    sys.setrecursionlimit(10000000)  
+    # sys.setrecursionlimit(10000000)  
 
     # arr = test.random_arr(10000, 0, 400)
-    arr = test.nearlyOrder_arr(100000, 2)
-    arr1 = copy.copy(arr)
-    arr2 = copy.copy(arr)
-    arr3 = copy.copy(arr)
+    # arr = test.nearlyOrder_arr(100000, 2)
+    # arr1 = copy.copy(arr)
+    # arr2 = copy.copy(arr)
+    # arr3 = copy.copy(arr)
 
     # selectionSort(arr)
     # insertionSort(arr1)
-    mergeSort.mergeSort(arr2)
-    quickSort.quickSort(arr3)
+    # mergeSort.mergeSort(arr2)
+    # quickSort.quickSort(arr3)
+
+    heap = MaxHeap()
+    heap.insert(2)
+    heap.insert(4)
+    heap.insert(6)
+    print heap.size()
+    print heap.isEmpty()
+
+    print heap.data
