@@ -1,6 +1,7 @@
 
 import test
 import copy
+import sys
 import mergeSort
 import quickSort
 
@@ -23,18 +24,19 @@ def insertionSort(arr):
             else:
                 break
         arr[j] = tmp
-        
+
 
 if __name__ == "__main__":
 
-    arr = test.random_arr(10000, 0, 400)
+    sys.setrecursionlimit(10000000)  
+
+    # arr = test.random_arr(10000, 0, 400)
+    arr = test.nearlyOrder_arr(100000, 2)
     arr1 = copy.copy(arr)
     arr2 = copy.copy(arr)
     arr3 = copy.copy(arr)
 
-    # arr = test.nearlyOrder_arr(10, 2)
-
-    selectionSort(arr)
-    insertionSort(arr1)
+    # selectionSort(arr)
+    # insertionSort(arr1)
     mergeSort.mergeSort(arr2)
     quickSort.quickSort(arr3)
